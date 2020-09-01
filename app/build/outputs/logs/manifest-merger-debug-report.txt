@@ -1,0 +1,41 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:3:11-32
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:1-25:12
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml:4:22-64
+uses-sdk
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		ADDED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/abhinavagarwal/Documents/docquity-mpp-kotlin-native/app/src/main/AndroidManifest.xml
