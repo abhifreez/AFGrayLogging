@@ -8,6 +8,15 @@ expect class Sample() {
 expect class AFKNPlatformUtil() {
     fun getHashMapFromJsonString(string: String): Map<String, Any>
     fun log(obj:Any)
+
+}
+
+expect object AFPlatformLogger {
+    fun debug(obj:Any,tag:String)
+    fun error(obj: Any,tag:String)
+    fun warning(obj: Any,tag:String)
+    fun info(obj: Any,tag:String)
+
 }
 
 expect class DCBroadcastUtils() {

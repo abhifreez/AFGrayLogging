@@ -93,6 +93,8 @@ actual  class AFKNPlatformUtil actual constructor() {
         return list
     }
 
+    actual fun error(obj: Any) {
+    }
 
 
 }

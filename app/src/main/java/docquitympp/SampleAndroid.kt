@@ -2,6 +2,7 @@ package docquitympp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import docquitympp.model.DKLCordinates
 import docquitympp.model.DKLocation
 
@@ -46,6 +47,24 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+    }
+
+
+}
+
+
+
+actual object AFPlatformLogger {
+    actual fun debug(obj: Any, tag: String) {
+    }
+
+    actual fun error(obj: Any, tag: String) {
+    }
+
+    actual fun warning(obj: Any, tag: String) {
+    }
+
+    actual fun info(obj: Any, tag: String) {
     }
 
 
