@@ -1,5 +1,7 @@
+//include ':AGGrayLogclient'
 enableFeaturePreview('GRADLE_METADATA')
 include ':AFGrayLogClient'
 include ':app'
+//include ':kmmsharedmodule'
 
 rootProject.name = "AF Logging Test App"

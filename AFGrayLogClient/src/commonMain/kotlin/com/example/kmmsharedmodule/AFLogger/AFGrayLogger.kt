@@ -6,13 +6,13 @@ import   com.example.kmmsharedmodule.AFPlatformLogger
 
 
 
-object AFGrayLogger {
+class AFGrayLogger {
 
-   enum class LogLevel {
-       DEBUG,
-       ERROR,
-       INFO,
-       WARNING
+   enum class LogLevel(val level: Int) {
+       DEBUG(0),
+       ERROR(1),
+       INFO(2),
+       WARNING(3)
 
    }
     internal var serverAddress:String = ""
@@ -21,13 +21,13 @@ object AFGrayLogger {
         serverAddress = url;
     }
 
-    fun remoteLog(loglevel:LogLevel,msg:Any,tag:String){
+    fun remoteLog(loglevel:LogLevel,msg:Any,tag:String,trackId:String){
 
         AFPlatformLogger.debug("we are testing","Api Response")
 
         var url = serverAddress;
         var request = AFKNNetworkRequest();
-        var body = makeBody(AFLogger.appVersion,AFLogger.host,tag,msg.toString(),0,"debug")
+        var body = makeBody(AFLoggerInfo.appVersion,AFLoggerInfo.host,tag,msg.toString(),loglevel.level,"debug",trackId=trackId)
         AFPlatformLogger.debug(body,"Api Body")
         AFPlatformLogger.debug(url,"Api Url")
         request.thirdPartyRequest(url = url, data = body, compilation = {
@@ -50,15 +50,31 @@ object AFGrayLogger {
 
     }
 
-    fun  makeBody(version:String,host:String,shrt_message:String,longMessage:String,lever:Int,logType:String): String {
+    fun  makeBody(version:String, host:String, shrt_message:String, longMessage:String, level:Int, logType:String,trackId:String): String {
 
 
-        var body = GelfModel(version,host,shrt_message,longMessage,lever,logType);
-        var bodyString = """{ "version ": "1.1", "host": "kotlin.org2", "short_message": "A short message", "level": 5, "_some_info": "foo","log_type":"debug"}"""
+        var body = GelfModel(version,host,shrt_message,longMessage,level,logType);
+        var bodyString = """{ 
+            "version ": """"+version+"""", 
+            "host": """"+host+"""", 
+            "short_message": """"+shrt_message+"""",
+            "level": """+level+""", 
+            "some_info":""""+longMessage+"""",
+            "log_type":""""+logType+"""",
+            "track_id":"""+trackId+""",   
+            }""".trimMargin()
+
         AFPlatformLogger.debug("body string",bodyString) ;
         val jsonString = bodyString;
         return jsonString;
     }
+
+    fun getDebugType(debugLevel:Int){
+
+    }
+
+
+
 }
 
 class GelfModel(version: String,host: String,shrt_message: String,longMessage: String,lever: Int,logType: String){

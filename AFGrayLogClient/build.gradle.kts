@@ -54,7 +54,7 @@ kotlin {
         val iosMain by getting {
             dependencies {
 
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
+               // implementation("io.ktor:ktor-client-android:$ktorVersion")
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
 
             }
@@ -66,7 +66,7 @@ android {
     compileSdkVersion(29)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(19)
+        minSdkVersion(24)
         targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
