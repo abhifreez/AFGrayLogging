@@ -18,6 +18,7 @@ actual class Sample {
 actual object AFPlatformLogger {
     actual fun debug(obj: Any, tag: String) {
 
+
         Log.d(tag,obj.toString());
     }
 

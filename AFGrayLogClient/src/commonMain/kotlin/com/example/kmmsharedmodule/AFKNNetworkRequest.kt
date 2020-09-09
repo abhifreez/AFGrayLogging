@@ -7,6 +7,7 @@ import io.ktor.client.request.*
 import io.ktor.client.response.readText
 import io.ktor.http.HttpMethod
 import kotlinx.coroutines.*
+import com.example.kmmsharedmodule.AFPlatformLogger
 
 
 
@@ -20,10 +21,6 @@ expect val ApplicationDispatcher: CoroutineDispatcher
 class AFKNNetworkRequest {
 
 
-
-
-
-
     fun thirdPartyRequest(compilation: (response: Any) -> Int, url: String, data: String) {
 
 
@@ -31,18 +28,27 @@ class AFKNNetworkRequest {
             launch(ApplicationDispatcher) {
 
 
-
-
                 val client = HttpClient()
-                val message = client.post<String> {
-                    url(url)
-                   // contentType(ContentType.Application.Json)
-                    body = data
+                try {
+                    // some code
+                    val message = client.post<String> {
+                        url(url)
+                        // contentType(ContentType.Application.Json)
+                        body = data
+                    }
+                }
+                catch (e: Exception) {
+                    // handler
+                    AFPlatformLogger.error("""Logging Failed :${e.message}""","Logging Api Failed");
+                }
+                finally {
+                    // optional finally block
+                    client.close()
                 }
 
-                println("CLIENT: Message from the server: $message")
 
-                client.close()
+                // println("CLIENT: Message from the server: $message")
+
 
 
 
@@ -51,38 +57,5 @@ class AFKNNetworkRequest {
     }
 
 
-//    suspend fun sequentialRequests(compilation: (response: AFKNNetworkResponse) -> Int) {
-//
-//        val client = HttpClient()
-//
-//        var currentObj = this
-//
-//        val call = client.call(currentObj.BASE_REQUEST.BASE_URL + currentObj.API_URL) {
-//            method = currentObj.getRequestType()
-//            // contentType(ContentType.Application.Json)
-//            for ((key, value) in currentObj.BASE_REQUEST.HEADER_DATA?.iterator()!!) {
-//                headers.append(key, value as String)
-//            }
-//            for ((key, value) in currentObj.PARAMS?.iterator()!!) {
-//                parameter(key, value)
-//            }
-//            println("API Request" + client.attributes)
-//        }
-//
-//        var responce = call.response
-//
-//        /* var response:AFKNNetworkResponse = AFKNNetworkResponse();
-//         response.RESPONCE_SUCCESS_MSG = call.response.readText();
-//         compilation(response)*/
-//
-//        // call.receive<Any>()
-//        var dataHashMap = AFKNPlatformUtil().getHashMapFromJsonString(responce.readText())
-//        println("=======" + dataHashMap)
-//
-//        var response = AFKNNetworkResponse.parseHashMapForResponce(DCKNManager.context,
-//                this, dataHashMap)
-//        compilation(response)
-//        println("=======" + response)
-//    }
 }
 

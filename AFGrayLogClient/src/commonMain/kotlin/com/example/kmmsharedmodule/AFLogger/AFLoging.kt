@@ -2,16 +2,12 @@ package com.example.kmmsharedmodule
 
 import  com.example.kmmsharedmodule.AFKNPlatformUtil
 import  com.example.kmmsharedmodule.AFPlatformLogger
+import  com.example.kmmsharedmodule.AFLoggerInfo;
 
-
-object AFLoggerInfo{
+class AFLoggerInfo{
 
     internal var appVersion:String = "";
     internal var host:String = "";
-
-
-
-
 
 }
 
@@ -22,6 +18,7 @@ class AFLoging {
     private var isRemoteLoggingEnable: Boolean = false;
     private var trackId: String = "";
     private lateinit var grayLog:AFGrayLogger;
+    private lateinit var loggerInfo:AFLoggerInfo;
 
 
 
@@ -34,17 +31,18 @@ class AFLoging {
         this.grayLog = AFGrayLogger();
         this.grayLog.setServerAddress(serverAddess);
 
+          this.loggerInfo = AFLoggerInfo();
+        this.loggerInfo.appVersion = appVersion;
+        this.loggerInfo.host = host;
+
+
+
 
 
    }
     init {
 
     }
-
-    fun setParams(){
-        AFPlatformLogger.debug("set Parama Workinf", "tag ");
-    }
-
 
 
     fun setLocalLogging(isEnable: Boolean) {
@@ -69,48 +67,48 @@ class AFLoging {
         isRemoteLoggingEnable = isEnable;
     }
 
-    fun debug(msg: Any, tag: String) {
+    fun debug(msg: String, tag: String) {
         if (isLocalLoggingEnable) {
             AFPlatformLogger.debug(msg, tag);
         }
         if (isRemoteLoggingEnable) {
 
-            grayLog.remoteLog(AFGrayLogger.LogLevel.DEBUG, msg, tag, trackId)
+            grayLog.remoteLog(AFGrayLogger.LogLevel.DEBUG, msg, tag, trackId,this.loggerInfo)
 
         }
 
     }
 
-    fun error(msg: Any, tag: String) {
+    fun error(msg: String, tag: String) {
         if (isLocalLoggingEnable) {
-            AFPlatformLogger.debug(msg, tag);
+            AFPlatformLogger.error(msg, tag);
         }
         if (isRemoteLoggingEnable) {
 
-            grayLog.remoteLog(AFGrayLogger.LogLevel.DEBUG, msg, tag, trackId)
+            grayLog.remoteLog(AFGrayLogger.LogLevel.ERROR, msg, tag, trackId,this.loggerInfo)
 
         }
 
     }
-    fun info(msg: Any, tag: String) {
+    fun info(msg: String, tag: String) {
         if (isLocalLoggingEnable) {
-            AFPlatformLogger.debug(msg, tag);
+            AFPlatformLogger.info(msg, tag);
         }
         if (isRemoteLoggingEnable) {
 
-            grayLog.remoteLog(AFGrayLogger.LogLevel.DEBUG, msg, tag, trackId)
+            grayLog.remoteLog(AFGrayLogger.LogLevel.INFO, msg, tag, trackId,this.loggerInfo)
 
         }
 
     }
-    fun warnning(msg: Any, tag: String) {
-        
+    fun warning(msg: String, tag: String) {
+
         if (isLocalLoggingEnable) {
-            AFPlatformLogger.debug(msg, tag);
+            AFPlatformLogger.warning(msg, tag);
         }
         if (isRemoteLoggingEnable) {
 
-            grayLog.remoteLog(AFGrayLogger.LogLevel.DEBUG, msg, tag, trackId)
+            grayLog.remoteLog(AFGrayLogger.LogLevel.WARNING, msg, tag, trackId,this.loggerInfo)
 
         }
 

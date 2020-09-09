@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class KmmsharedmoduleAFGrayLoggerLogLevel, KmmsharedmoduleKotlinEnum<E>, NSDictionary, KmmsharedmoduleKotlinx_coroutines_coreCoroutineDispatcher, KmmsharedmoduleKotlinArray<T>, KmmsharedmoduleKotlinAbstractCoroutineContextElement;
+@class KmmsharedmoduleAFGrayLoggerLogLevel, KmmsharedmoduleAFLoggerInfo, KmmsharedmoduleKotlinEnum<E>, NSDictionary, KmmsharedmoduleKotlinx_coroutines_coreCoroutineDispatcher, KmmsharedmoduleKotlinArray<T>, KmmsharedmoduleKotlinAbstractCoroutineContextElement;
 
 @protocol KmmsharedmoduleKotlinComparable, KmmsharedmoduleKotlinCoroutineContextKey, KmmsharedmoduleKotlinCoroutineContextElement, KmmsharedmoduleKotlinCoroutineContext, KmmsharedmoduleKotlinContinuation, KmmsharedmoduleKotlinContinuationInterceptor, KmmsharedmoduleKotlinx_coroutines_coreRunnable, KmmsharedmoduleKotlinIterator;
 
@@ -145,7 +145,7 @@ __attribute__((swift_name("AFGrayLogger")))
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)getDebugTypeDebugLevel:(int32_t)debugLevel __attribute__((swift_name("getDebugType(debugLevel:)")));
 - (NSString *)makeBodyVersion:(NSString *)version host:(NSString *)host shrt_message:(NSString *)shrt_message longMessage:(NSString *)longMessage level:(int32_t)level logType:(NSString *)logType trackId:(NSString *)trackId __attribute__((swift_name("makeBody(version:host:shrt_message:longMessage:level:logType:trackId:)")));
-- (void)remoteLogLoglevel:(KmmsharedmoduleAFGrayLoggerLogLevel *)loglevel msg:(id)msg tag:(NSString *)tag trackId:(NSString *)trackId __attribute__((swift_name("remoteLog(loglevel:msg:tag:trackId:)")));
+- (void)remoteLogLoglevel:(KmmsharedmoduleAFGrayLoggerLogLevel *)loglevel msg:(id)msg tag:(NSString *)tag trackId:(NSString *)trackId appInfo:(KmmsharedmoduleAFLoggerInfo *)appInfo __attribute__((swift_name("remoteLog(loglevel:msg:tag:trackId:appInfo:)")));
 - (void)setServerAddressUrl:(NSString *)url __attribute__((swift_name("setServerAddress(url:)")));
 @end;
 
@@ -200,9 +200,8 @@ __attribute__((swift_name("AFKNPlatformUtil")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AFLoggerInfo")))
 @interface KmmsharedmoduleAFLoggerInfo : KmmsharedmoduleBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)aFLoggerInfo __attribute__((swift_name("init()")));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -210,11 +209,13 @@ __attribute__((swift_name("AFLoging")))
 @interface KmmsharedmoduleAFLoging : KmmsharedmoduleBase
 - (instancetype)initWithIsLocalLoggingEnable:(BOOL)isLocalLoggingEnable isRemoteLoggingEnable:(BOOL)isRemoteLoggingEnable trackId:(NSString *)trackId appVersion:(NSString *)appVersion host:(NSString *)host serverAddess:(NSString *)serverAddess __attribute__((swift_name("init(isLocalLoggingEnable:isRemoteLoggingEnable:trackId:appVersion:host:serverAddess:)"))) __attribute__((objc_designated_initializer));
 - (void)debugMsg:(id)msg tag:(NSString *)tag __attribute__((swift_name("debug(msg:tag:)")));
+- (void)errorMsg:(id)msg tag:(NSString *)tag __attribute__((swift_name("error(msg:tag:)")));
+- (void)infoMsg:(id)msg tag:(NSString *)tag __attribute__((swift_name("info(msg:tag:)")));
 - (void)setLocalLoggingIsEnable:(BOOL)isEnable __attribute__((swift_name("setLocalLogging(isEnable:)")));
-- (void)setParams __attribute__((swift_name("setParams()")));
 - (void)setRemoteLoggingIsEnable:(BOOL)isEnable __attribute__((swift_name("setRemoteLogging(isEnable:)")));
 - (void)setServerAddressUrl:(NSString *)url __attribute__((swift_name("setServerAddress(url:)")));
 - (void)setTrackIdTrackId:(NSString *)trackId __attribute__((swift_name("setTrackId(trackId:)")));
+- (void)warningMsg:(id)msg tag:(NSString *)tag __attribute__((swift_name("warning(msg:tag:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -225,6 +226,7 @@ __attribute__((swift_name("AFPlatformLogger")))
 + (instancetype)aFPlatformLogger __attribute__((swift_name("init()")));
 - (void)debugObj:(id)obj tag:(NSString *)tag __attribute__((swift_name("debug(obj:tag:)")));
 - (void)errorObj:(id)obj tag:(NSString *)tag __attribute__((swift_name("error(obj:tag:)")));
+- (NSString *)getMsgFormatType:(NSString *)type tag:(NSString *)tag obj:(id)obj __attribute__((swift_name("getMsgFormat(type:tag:obj:)")));
 - (void)infoObj:(id)obj tag:(NSString *)tag __attribute__((swift_name("info(obj:tag:)")));
 - (void)warningObj:(id)obj tag:(NSString *)tag __attribute__((swift_name("warning(obj:tag:)")));
 @end;

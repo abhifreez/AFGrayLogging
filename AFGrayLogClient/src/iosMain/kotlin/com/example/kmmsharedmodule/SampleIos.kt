@@ -15,30 +15,29 @@ actual class Sample {
 }
 
 
-
-
-
-
 actual object AFPlatformLogger {
 
+    fun getMsgFormat(type:String,tag: String,obj: Any):String{
+        return "Debug Type:"+type+" Tag:"+tag+" Msg:"+(obj as? String) ;
+    }
 
     actual fun debug(obj: Any, tag: String) {
 
-        NSLog(tag,obj)
+        NSLog(getMsgFormat("Debug",tag,obj));
 
     }
 
     actual fun error(obj: Any, tag: String) {
-        NSLog(tag,obj)
+        NSLog(getMsgFormat("Error",tag,obj));
     }
 
     actual fun warning(obj: Any, tag: String) {
-        NSLog(tag,obj)
+        NSLog(getMsgFormat("Warning",tag,obj));
     }
 
 
     actual fun info(obj: Any, tag: String) {
-        NSLog(tag,obj)
+        NSLog(getMsgFormat("Info",tag,obj));
     }
 
 

@@ -14,33 +14,36 @@ class AFGrayLogger {
        INFO(2),
        WARNING(3)
 
+
    }
+
+    fun getLogTypeName(logLevel:LogLevel):String{
+
+        when (logLevel){
+            LogLevel.DEBUG -> return "DEBUG";
+            LogLevel.ERROR -> return "ERROR";
+            LogLevel.INFO -> return "INFO";
+            LogLevel.WARNING -> return "WARNING";
+        }
+    }
+
     internal var serverAddress:String = ""
 
     fun setServerAddress(url: String){
         serverAddress = url;
     }
 
-    fun remoteLog(loglevel:LogLevel,msg:Any,tag:String,trackId:String){
+    fun remoteLog(loglevel:LogLevel,msg:Any,tag:String,trackId:String,appInfo:AFLoggerInfo){
 
-        AFPlatformLogger.debug("we are testing","Api Response")
+
+
 
         var url = serverAddress;
         var request = AFKNNetworkRequest();
-        var body = makeBody(AFLoggerInfo.appVersion,AFLoggerInfo.host,tag,msg.toString(),loglevel.level,"debug",trackId=trackId)
-        AFPlatformLogger.debug(body,"Api Body")
-        AFPlatformLogger.debug(url,"Api Url")
+        var body = makeBody(appInfo.appVersion,appInfo.host,tag,msg.toString().replace("\"","\'"),loglevel.level,getLogTypeName(loglevel),trackId=trackId)
+
         request.thirdPartyRequest(url = url, data = body, compilation = {
 
-            AFPlatformLogger.debug(it,"Api Response")
-            println("Recived Responce Form Ntwork To Model")
-
-            AFKNPlatformUtil().log("Recived Responce Form Ntwork To Model")
-
-//            var address = DKLAddress(it.RESPONCE_DATA as? Map<Any, Any>);
-//
-//            AFKNPlatformUtil().log("Conversion sucess")
-//            complition(address)
 
             return@thirdPartyRequest 0;
         })
@@ -61,10 +64,10 @@ class AFGrayLogger {
             "level": """+level+""", 
             "some_info":""""+longMessage+"""",
             "log_type":""""+logType+"""",
-            "track_id":"""+trackId+""",   
-            }""".trimMargin()
+            "track_id":""""+trackId+""""   
+            }""";
 
-        AFPlatformLogger.debug("body string",bodyString) ;
+        //AFPlatformLogger.debug(bodyString,"test string");
         val jsonString = bodyString;
         return jsonString;
     }

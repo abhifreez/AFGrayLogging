@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Greeting().greeting();
 
-        var log = AFLoging(true,true,"1545623","1.0","Test App","http://52.221.212.157:12201/gelf")
-        log.debug("Logging is working","AppCompatActivity");
+        var log = AFLoging(true,true,"1545623","1.0","abc.com","http://52.221.245.216:12201/gelf")
+        log.debug("Logging is \"working","AppCompatActivity");
 
 
     }
