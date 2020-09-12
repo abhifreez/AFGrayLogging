@@ -23,7 +23,10 @@ repositories {
 val coroutinesVersion = "1.3.9-native-mt"
 val ktorVersion = "1.4.0"
 
-
+tasks.withType<Wrapper> {
+    gradleVersion = "5.3.1"
+    distributionType = Wrapper.DistributionType.ALL
+}
 kotlin {
 
     android()
