@@ -2,17 +2,21 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 
 
+
+
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-android-extensions")
+    id("com.github.dcendents.android-maven")
     `maven-publish`
 
 }
 
 
 repositories {
-    //gradlePluginPortal()
+    gradlePluginPortal()
     google()
     jcenter()
     mavenCentral()
@@ -24,10 +28,12 @@ val coroutinesVersion = "1.3.9-native-mt"
 val ktorVersion = "1.4.0"
 
 tasks.withType<Wrapper> {
+    group="com.github.abhifreez"
     gradleVersion = "5.3.1"
     distributionType = Wrapper.DistributionType.ALL
 }
 kotlin {
+
 
     android()
     ios {
