@@ -12,7 +12,7 @@ plugins {
 
 
 repositories {
-    gradlePluginPortal()
+    //gradlePluginPortal()
     google()
     jcenter()
     mavenCentral()
@@ -25,6 +25,7 @@ val ktorVersion = "1.4.0"
 
 
 kotlin {
+
     android()
     ios {
         binaries {
