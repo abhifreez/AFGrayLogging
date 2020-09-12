@@ -6,7 +6,7 @@ import   com.example.kmmsharedmodule.AFPlatformLogger
 
 
 
-class AFGrayLogger {
+ class AFGrayLogger {
 
    enum class LogLevel(val level: Int) {
        DEBUG(0),

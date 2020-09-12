@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../AFGrayLogClient/1.0/AFGrayLogClient-1.0.module",
+    "group": "com.example",
+    "module": "AFGrayLogClient",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "mktsbrthsveonfksgebzmjvsyq"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64-api",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.3.9-native-mt"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "1.4.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-serialization",
+          "version": {
+            "requires": "1.4.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-ios",
+          "version": {
+            "requires": "1.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "AFGrayLogClient.klib",
+          "url": "AFGrayLogClient-iosarm64-1.0.klib",
+          "size": 24965,
+          "sha512": "2cc043e7473f5ba4653e2f8cf82c1c411059e0fae71bd95ef35886f50e6c6de43bb1c88c0425a06d2603011a63a7adfa7613913b50784ce61fd614b3e928e34d",
+          "sha256": "f9954ddb2d1179d67b5385f174e36b5e6188c86d95b82c51adce59cf53dbdfc5",
+          "sha1": "d26039a37eb8e5e4a56d4b3457ca1d631bb36f8e",
+          "md5": "57aa58cd90da2431e5791697b35369ab"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64-iosArm64MetadataElements",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "AFGrayLogClient-iosarm64-1.0-metadata.jar",
+          "url": "AFGrayLogClient-iosarm64-1.0-metadata.jar",
+          "size": 5794,
+          "sha512": "9a8dcf0ade21f070e5a61ed76d753c6ac890bf38eb28bc8020f63fb23966e64125aeb36c3a1a013fa5675f71d6f3fc4457881122c25f1897677f47fc0829dc6e",
+          "sha256": "ba5847d6cda750e05884ab605efafb331b12b6eb6d96435f3ae6545a3ef30bdd",
+          "sha1": "12729a1b9449b48ddb862668bf57138f21a3c188",
+          "md5": "7ff772f150e4a20a2815df83e8c15260"
+        }
+      ]
+    },
+    {
+      "name": "metadata-api",
+      "attributes": {
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "available-at": {
+        "url": "../../AFGrayLogClient-metadata/1.0/AFGrayLogClient-metadata-1.0.module",
+        "group": "com.example",
+        "module": "AFGrayLogClient-metadata",
+        "version": "1.0"
+      }
+    },
+    {
+      "name": "metadata-commonMainMetadataElements",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "available-at": {
+        "url": "../../AFGrayLogClient-metadata/1.0/AFGrayLogClient-metadata-1.0.module",
+        "group": "com.example",
+        "module": "AFGrayLogClient-metadata",
+        "version": "1.0"
+      }
+    }
+  ]
+}

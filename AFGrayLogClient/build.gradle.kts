@@ -6,7 +6,9 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-android-extensions")
+
 }
+
 
 repositories {
     gradlePluginPortal()
@@ -44,9 +46,9 @@ kotlin {
       //  val commonMain by getting
         val androidMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-                implementation("androidx.core:core-ktx:1.2.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+             //   implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+             //   implementation("androidx.core:core-ktx:1.2.0")
+             //  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
 
             }
@@ -63,6 +65,10 @@ kotlin {
     }
 }
 android {
+
+
+  //  publishLibraryVariants("release", "debug")
+
     compileSdkVersion(29)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {

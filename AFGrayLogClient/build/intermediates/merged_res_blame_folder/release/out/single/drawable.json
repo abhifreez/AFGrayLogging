@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/abhinavagarwal/Documents/logging-graylog-mpp/AFGrayLogClient/build/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/abhinavagarwal/.gradle/caches/transforms-2/files-2.1/4fa3413414cbeb3f5182c9363def442f/core-1.2.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/abhinavagarwal/Documents/logging-graylog-mpp/AFGrayLogClient/build/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/abhinavagarwal/.gradle/caches/transforms-2/files-2.1/4fa3413414cbeb3f5182c9363def442f/core-1.2.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/abhinavagarwal/Documents/logging-graylog-mpp/AFGrayLogClient/build/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/abhinavagarwal/.gradle/caches/transforms-2/files-2.1/4fa3413414cbeb3f5182c9363def442f/core-1.2.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/abhinavagarwal/Documents/logging-graylog-mpp/AFGrayLogClient/build/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/abhinavagarwal/.gradle/caches/transforms-2/files-2.1/4fa3413414cbeb3f5182c9363def442f/core-1.2.0/res/drawable/notification_bg.xml"
+    }
+]
