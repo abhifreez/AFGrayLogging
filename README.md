@@ -1,45 +1,64 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+AFGrayLogging
+AFGrayLogging is a Kotlin Multiplatform library for sending logs to a Graylog server. This library is designed to be compatible with both iOS and Android applications, offering a unified logging solution across platforms.
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Features
+Send logs to a Graylog server from Kotlin Multiplatform projects.
+Compatible with both iOS and Android platforms.
+Easy to integrate and configure.
+Installation
+To install AFGrayLogging, follow these steps:
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+Add the AFGrayLogging dependency to your Kotlin Multiplatform project.
+Configure the library with your Graylog server settings.
+Start logging your application's messages.
+Gradle (Kotlin Multiplatform)
+groovy
+Copy code
+// Add this to your shared module build.gradle.kts
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("com.example:AFGrayLogging:1.0.0")
+            }
+        }
+    }
+}
+Graylog Server Configuration
+Before using AFGrayLogging, ensure that you have access to a Graylog server and note down the server's address, port, and any necessary authentication details.
 
----
+Usage
+Initialization
+Initialize the AFGrayLogging library with your Graylog server settings:
 
-## Edit a file
+kotlin
+Copy code
+import com.example.afgraylogging.AFGrayLogger
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+AFGrayLogger.initialize("http://your-graylog-server.com", 12201, "your_graylog_username", "your_graylog_password")
+Logging Messages
+Send log messages to your Graylog server using the logger instance:
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+kotlin
+Copy code
+import com.example.afgraylogging.AFGrayLogger
 
----
+// Log a debug message
+AFGrayLogger.debug("Debug log message")
 
-## Create a file
+// Log an info message
+AFGrayLogger.info("Info log message")
 
-Next, you’ll add a new file to this repository.
+// Log a warning message
+AFGrayLogger.warn("Warning log message")
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+// Log an error message
+AFGrayLogger.error("Error log message")
+Customization
+You can customize the logging behavior by configuring the logger instance or extending the provided classes as per your requirements.
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+Support
+If you encounter any issues or have questions about AFGrayLogging, feel free to open an issue on GitHub.
 
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Contributing
+Contributions are welcome! If you'd like to contribute to AFGrayLogging.
